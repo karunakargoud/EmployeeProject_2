@@ -1,0 +1,76 @@
+﻿@using EmployeeProject_2.Models
+@model Employee
+@{
+    ViewBag.Title = "EnterNewEmployeeDetails";
+}
+
+<h2>Enter New Employee Details</h2>
+
+<form method="post" action="SaveEmployeeDetails">
+    <table>
+        <tr>
+            <th>Employee Id</th>
+            <td>
+                <input type="text"
+                       id="EmployeeId"
+                       name="EmployeeId"
+                       value="@Model.EmployeeId" />
+            </td>
+            <td>
+                @Html.ValidationMessageFor(m => m.EmployeeId)
+            </td>
+        </tr>
+        <tr>
+            <th>Employee Name</th>
+            <td>
+                <input type="text"
+                       id="EmployeeName"
+                       name="EmployeeName"
+                       value="@Model.EmployeeName" />
+            </td>
+            <td>
+                @Html.ValidationMessageFor(m => m.EmployeeName)
+            </td>
+        </tr>
+        
+        <tr>
+            <th>Description</th>
+            <td>
+                <input type="text"
+                       id="Description"
+                       name="Description"
+                       value="@Model.Description" />
+            </td>
+            <td>@Html.ValidationMessageFor(m => m.Description)</td>
+        </tr>
+        <tr>
+            <th>Salary</th>
+            <td>
+                <input type="text"
+                       id="Salary"
+                       name="Salary"
+                       value="@Model.Salary" />
+            </td>
+            <td>@Html.ValidationMessageFor(m => m.Salary)</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="reset"
+                       value="clear"
+                       />
+            </td>
+            <td>
+                <input type="submit"
+                       value="Enter New Employee"
+                       />
+            </td>
+
+        </tr>
+        <tr>
+            <td colspan="2">
+               @Html.ValidationSummary()
+            </td>
+        </tr>
+    </table>
+</form>
+
